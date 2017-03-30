@@ -1,7 +1,8 @@
 <?php
-namespace db;
+use db\dbActionsInterface;
+include_once('dbActions.php');
 
-class products implements dbActions
+class products extends dbActions implements dbActionsInterface
 {
     private $id = '';
     private $id_catalog = '';
@@ -11,36 +12,6 @@ class products implements dbActions
     private $price = '';
     private $description = '';
     private $status = '';
-
-    function create()
-    {
-        // TODO: Implement create() method.
-    }
-
-    function find()
-    {
-        // TODO: Implement find() method.
-    }
-
-    function findOne($id)
-    {
-        // TODO: Implement findOne() method.
-    }
-
-    function findBy($arr = Array())
-    {
-        // TODO: Implement findBy() method.
-    }
-
-    function update($arr1 = Array(), $arr2 = Array())
-    {
-        // TODO: Implement update() method.
-    }
-
-    function delete($id)
-    {
-        // TODO: Implement delete() method.
-    }
 
 
     /**
@@ -172,4 +143,12 @@ class products implements dbActions
     }
 
 
+}
+
+$obj = new products();
+
+
+foreach ($obj->find() as $item) {
+
+    echo '<br>'.$item['mark'];
 }

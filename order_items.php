@@ -1,7 +1,8 @@
 <?php
-namespace db;
+use db\dbActionsInterface;
+include_once('dbActions.php');
 
-class order_items implements dbActions
+class order_items extends dbActions implements dbActionsInterface
 {
     private $id = '';
     private $id_order = '';
@@ -9,35 +10,6 @@ class order_items implements dbActions
     private $price = '';
     private $count = '';
 
-    function create()
-    {
-        // TODO: Implement create() method.
-    }
-
-    function find()
-    {
-        // TODO: Implement find() method.
-    }
-
-    function findOne($id)
-    {
-        // TODO: Implement findOne() method.
-    }
-
-    function findBy($arr = Array())
-    {
-        // TODO: Implement findBy() method.
-    }
-
-    function update($arr1 = Array(), $arr2 = Array())
-    {
-        // TODO: Implement update() method.
-    }
-
-    function delete($id)
-    {
-        // TODO: Implement delete() method.
-    }
 
     /**
      * @return string

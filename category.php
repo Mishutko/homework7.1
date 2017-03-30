@@ -1,41 +1,14 @@
 <?php
-namespace db;
+use db\dbActionsInterface;
 
-class category implements dbActions
+include_once('dbActions.php');
+
+class category extends dbActions implements dbActionsInterface
 {
     private $id = '';
     private $title = '';
     private $status = '';
 
-    function create()
-    {
-        // TODO: Implement create() method.
-    }
-
-    function find()
-    {
-        // TODO: Implement find() method.
-    }
-
-    function findOne($id)
-    {
-        // TODO: Implement findOne() method.
-    }
-
-    function findBy($arr = Array())
-    {
-        // TODO: Implement findBy() method.
-    }
-
-    function update($arr1 = Array(), $arr2 = Array())
-    {
-        // TODO: Implement update() method.
-    }
-
-    function delete($id)
-    {
-        // TODO: Implement delete() method.
-    }
 
     /**
      * @return string
@@ -85,5 +58,11 @@ class category implements dbActions
         $this->status = $status;
     }
 
+}
 
+$obj = new category();
+
+foreach ($obj->find() as $item) {
+
+    echo $item['title'];
 }

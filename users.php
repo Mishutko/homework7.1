@@ -1,42 +1,18 @@
 <?php
-namespace db;
+use db\dbActionsInterface;
+include_once('dbActions.php');
 
-class users implements dbActions
+class users extends dbActions implements dbActionsInterface
 {
     private $id = '';
-    private $title = '';
+    private $name = '';
+    private $lastname = '';
+    private $birthday = '';
+    private $email = '';
+    private $is_active = '';
+    private $reg_date = '';
+    private $last_update = '';
     private $status = '';
-
-
-    function create()
-    {
-        // TODO: Implement create() method.
-    }
-
-    function find()
-    {
-        // TODO: Implement find() method.
-    }
-
-    function update($arr1 = Array(), $arr2 = Array())
-    {
-        // TODO: Implement update() method.
-    }
-
-    function delete($id)
-    {
-        // TODO: Implement delete() method.
-    }
-
-    function findOne($id)
-    {
-        // TODO: Implement findOne() method.
-    }
-
-    function findBy($arr = Array())
-    {
-        // TODO: Implement findBy() method.
-    }
 
     /**
      * @return string
@@ -57,17 +33,113 @@ class users implements dbActions
     /**
      * @return string
      */
-    public function getTitle()
+    public function getName()
     {
-        return $this->title;
+        return $this->name;
     }
 
     /**
-     * @param string $title
+     * @param string $name
      */
-    public function setTitle($title)
+    public function setName($name)
     {
-        $this->title = $title;
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * @param string $birthday
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
+    /**
+     * @param string $is_active
+     */
+    public function setIsActive($is_active)
+    {
+        $this->is_active = $is_active;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegDate()
+    {
+        return $this->reg_date;
+    }
+
+    /**
+     * @param string $reg_date
+     */
+    public function setRegDate($reg_date)
+    {
+        $this->reg_date = $reg_date;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastUpdate()
+    {
+        return $this->last_update;
+    }
+
+    /**
+     * @param string $last_update
+     */
+    public function setLastUpdate($last_update)
+    {
+        $this->last_update = $last_update;
     }
 
     /**
@@ -87,4 +159,12 @@ class users implements dbActions
     }
 
 
+}
+
+$obj = new users();
+
+
+foreach ($obj->find() as $item) {
+
+    echo '<br>'.$item['reg_date'];
 }
